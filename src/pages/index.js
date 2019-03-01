@@ -12,8 +12,11 @@ const IndexPage = () => (
           edges {
             node {
               title
-              field_summary {
+              summary: field_summary {
                 processed
+              }
+              path {
+                alias
               }
             }
           }
@@ -28,12 +31,14 @@ const IndexPage = () => (
         <ul>
           {data.allNodeRecipe.edges.map(recipe => (
             <li>
-              <p>
-                <strong>{recipe.node.title}</strong>
-              </p>
+              <Link to={recipe.node.path.alias}>
+                <p>
+                  <strong>{recipe.node.title}</strong>
+                </p>
+              </Link>
               <small
                 dangerouslySetInnerHTML={{
-                  __html: recipe.node.field_summary.processed,
+                  __html: recipe.node.summary.processed,
                 }}
               />
             </li>
