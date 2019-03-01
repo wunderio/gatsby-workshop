@@ -1,21 +1,44 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, StaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  <StaticQuery
+    query={graphql`
+      query {
+        allNodeRecipe {
+          edges {
+            node {
+              title
+              field_summary {
+                value
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Layout>
+        <SEO title="Home" keywords={[`umani`, `application`, `react`]} />
+        <h1>Welcome to Umami!</h1>
+        <p> Here's our latest recipes: </p>
+        <ul>
+          {data.allNodeRecipe.edges.map(recipe => (
+            <li>
+              <p>
+                <strong>{recipe.node.title}</strong>
+              </p>
+              <small>{recipe.node.field_summary.value}</small>
+            </li>
+          ))}
+        </ul>
+        <Link to="/page-2/">Go to page 2</Link>
+      </Layout>
+    )}
+  />
 )
 
 export default IndexPage
