@@ -19,6 +19,7 @@ const recipeTemplate = props => {
         tags={recipe.relationships.tags}
         instructions={recipe.instructions.processed}
         summary={recipe.summary.processed}
+        image={recipe.relationships.image}
       />
     </Layout>
   )
@@ -48,6 +49,15 @@ export const query = graphql`
         }
         tags: field_tags {
           name
+        }
+        image: field_image {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

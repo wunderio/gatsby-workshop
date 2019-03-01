@@ -620,3 +620,46 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+article.teaser {
+  margin: 10px 0;
+  display: flex;
+  border: 1px solid #f7edf4;
+  align-items: initial;
+  background-color: #fafafa;
+}
+
+article.teaser div.image {
+  max-width: 160px;
+  flex: 1;
+  padding: 10px;
+}
+
+article.teaser div.info {
+  flex: 1;
+  padding: 10px;
+}
+
+article.teaser a {
+  text-transform: uppercase;
+}
+
+body {
+  font-family: "Open sans", Verdana, sans-serif;
+  color: #143642;
+}
+
+a,
+a:active,
+a:visited {
+  color: #0f8b8d;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #0f8b8d;
+}
