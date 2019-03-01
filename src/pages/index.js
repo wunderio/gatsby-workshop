@@ -13,7 +13,7 @@ const IndexPage = () => (
             node {
               title
               field_summary {
-                value
+                processed
               }
             }
           }
@@ -31,7 +31,11 @@ const IndexPage = () => (
               <p>
                 <strong>{recipe.node.title}</strong>
               </p>
-              <small>{recipe.node.field_summary.value}</small>
+              <small
+                dangerouslySetInnerHTML={{
+                  __html: recipe.node.field_summary.processed,
+                }}
+              />
             </li>
           ))}
         </ul>
