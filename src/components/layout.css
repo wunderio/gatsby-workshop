@@ -621,12 +621,17 @@ pre tt:after {
   }
 }
 
+body {
+  background-color: #fbf5ee;
+}
+
 article.teaser {
   margin: 10px 0;
   display: flex;
-  border: 1px solid #f7edf4;
+  border: 1px solid #fcece7;
   align-items: initial;
-  background-color: #fafafa;
+  background-color: white;
+  border-radius: 3px;
 }
 
 article.teaser div.image {
@@ -641,7 +646,6 @@ article.teaser div.info {
 }
 
 article.teaser a {
-  text-transform: uppercase;
 }
 
 body {
@@ -654,6 +658,10 @@ a:active,
 a:visited {
   color: #0f8b8d;
   text-decoration: none;
+  font-family: "Scope One", serif;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 h1,
@@ -661,5 +669,7 @@ h2,
 h3,
 h4,
 h5 {
-  color: #0f8b8d;
+  font-family: "Scope One", serif;
+  color: #00836d;
+  margin-top: 1em;
 }
