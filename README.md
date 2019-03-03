@@ -3,20 +3,24 @@
 This repository contains a _demo gatsby site_ built for the ["The great drupal + gatsby workflow"](https://drupalmountaincamp.ch/sessions/workshop-drupal-and-gatsby-great-workflow) workshop held at
 [Mountain Drupalcamp 2019](https://drupalmountaincamp.ch) in Davos Switzerland.
 
-Checkout the `production` branch to see the "finished" product, or follow along by checking the `step-*` branches.
+Checkout the `production` branch to see the "finished" product, or follow along by checking out the `step-*` branches.
 
 ## 🚀 Quick start
 
-1. **Check out gatsby's [official guide](https://www.gatsbyjs.org/tutorial/part-zero/) to set up your local environment**. There are no special requirements other than what gatsby requires.
+1. **Check out the gatsby's [official guide](https://www.gatsbyjs.org/tutorial/part-zero/) to set up your local environment** (git and Node.js)
 
 1. **Clone this repository**
+
+   ```
+   git clone https://github.com/wunderio/gatsby-workshop.git
+   ```
 
 1. **Start developing.**
 
    Navigate into your new site’s directory and start it up.
    please note: We are using `npm` not `yarn` in this example.
 
-   ```sh
+   ```
    cd gatsby-workshop/
    npm install
    gatsby develop
