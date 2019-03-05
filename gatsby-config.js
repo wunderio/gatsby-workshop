@@ -32,10 +32,6 @@ module.exports = {
       options: {
         baseUrl: `http://master.gatsby-workshop-backend.silta.wdr.io`,
         apiBase: `jsonapi`, // optional, defaults to `jsonapi`
-        basicAuth: {
-          username: "silta",
-          password: "demo",
-        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
