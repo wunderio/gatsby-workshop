@@ -23,7 +23,7 @@ Checkout the `production` branch to see the "finished" product, or follow along 
    ```
    cd gatsby-workshop/
    npm install
-   gatsby develop
+   npm run develop
    ```
 
 1. **Open the source code and start editing!**
