@@ -3,6 +3,12 @@
 This repository contains a _demo gatsby site_ built for the ["The great drupal + gatsby workflow"](https://drupalmountaincamp.ch/sessions/workshop-drupal-and-gatsby-great-workflow) workshop held at
 [Mountain Drupalcamp 2019](https://drupalmountaincamp.ch) in Davos Switzerland.
 
+**Please note** : The master branch is the starting point and does not have anything apart from the standard Gatsby setup. Progress through the branches to see stuff happening:
+1. `step-1` Adds the drupal gatsby source plugin: you will start seeing the drupal data in your grapiql playground.
+1. `step-2` Add a `StaticQuery` component to display a list of the recipes from drupal on the index page.
+1. `step-3` Adds a page for each recipe using gatsby's node api and links to the recipes from the index page
+1. `step-4` Adds CSS and Gatsby images for each recipe.
+
 Checkout the `production` branch to see the "finished" product, or follow along by checking out the `step-*` branches.
 
 ## 🚀 Quick start
