@@ -9,14 +9,11 @@ const IndexPage = () => (
   <StaticQuery
     query={graphql`
       query {
-        allNodeRecipe {
+        allNodeArticle {
           edges {
             node {
               title
               drupal_id
-              summary: field_summary {
-                processed
-              }
               path {
                 alias
               }
@@ -39,29 +36,24 @@ const IndexPage = () => (
     render={data => (
       <Layout>
         <SEO title="Home" keywords={[`umani`, `application`, `react`]} />
-        <h1>Welcome to Umami!</h1>
-        <Link to="/articles/">Articles</Link>
-        <p> Here's our latest recipes: </p>
-        {data.allNodeRecipe.edges.map(recipe => (
-          <article key={recipe.node.drupal_id} className="teaser">
+        <h1>Articles</h1>
+        <p> Here's our latest articles: </p>
+        {data.allNodeArticle.edges.map(article => (
+          <article key={article.node.drupal_id} className="teaser">
             <div className="image">
               <Img
                 fluid={
-                  recipe.node.relationships.image.localFile.childImageSharp
+                  article.node.relationships.image.localFile.childImageSharp
                     .fluid
                 }
               />
             </div>
 
             <div className="info">
-              <Link to={recipe.node.path.alias}>
-                <strong>{recipe.node.title}</strong>
+              <Link to={article.node.path.alias}>
+                <strong>{article.node.title}</strong>
               </Link>
-              <small
-                dangerouslySetInnerHTML={{
-                  __html: recipe.node.summary.processed,
-                }}
-              />
+              
             </div>
           </article>
         ))}

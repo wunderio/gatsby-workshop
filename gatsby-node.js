@@ -24,12 +24,33 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        allNodeArticle {
+          edges {
+            node {
+              title
+              drupal_id
+              path {
+                alias
+              }
+            }
+          }
+        }
       }
     `).then(result => {
       result.data.allNodeRecipe.edges.forEach(({ node }) => {
         createPage({
           path: node.path.alias,
           component: path.resolve(`./src/templates/recipe.js`),
+          context: {
+            drupal_id: node.drupal_id,
+          },
+        })
+      })
+
+      result.data.allNodeArticle.edges.forEach(({ node }) => {
+        createPage({
+          path: node.path.alias,
+          component: path.resolve(`./src/templates/article.js`),
           context: {
             drupal_id: node.drupal_id,
           },
